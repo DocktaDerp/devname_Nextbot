@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode crouchKey = KeyCode.LeftControl;
 
     [Header("Ground Check")]
     public float playerHeight;
@@ -27,6 +28,8 @@ public class PlayerController : MonoBehaviour
     float verticalInput;
 
     Vector3 moveDirection;
+
+    
 
     Rigidbody rb;
     
