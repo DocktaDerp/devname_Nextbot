@@ -1,13 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class BasicChase : MonoBehaviour
+public class E_StartBasicChase : MonoBehaviour
 {
-    public NavMeshAgent enemy;
-    public Transform Player; 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +13,10 @@ public class BasicChase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemy.SetDestination(Player.position);
+        bool canSeePlayer = GetComponent<E_FieldOfView>().canSeePlayer;
+        if(canSeePlayer)
+        {
+            GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
+        }
     }
 }
