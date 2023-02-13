@@ -7,7 +7,7 @@ public class Enemy_173_mm : MonoBehaviour
     public GameObject target;
     public Camera cam;
     public Transform cam_tf;
-    int layer_mask;
+    public LayerMask layer_mask;
     bool cantSee;
 
     private bool IsVisible(Camera c, GameObject target)
@@ -23,12 +23,6 @@ public class Enemy_173_mm : MonoBehaviour
             }
         }
         return true;
-    }
-
-    
-    private void Start() 
-    {
-        layer_mask = LayerMask.GetMask("groundLayer");
     }
 
     private void Update ()
