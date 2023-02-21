@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class FlashlightGet : MonoBehaviour
 {
+    //Script (Ussually Flashlight) for this script to send info to
     [SerializeField] Flashlight flashlight;
+    //Held Flashlight model
     [SerializeField] GameObject flashlightHand;
 
     void Start()
@@ -12,7 +14,7 @@ public class FlashlightGet : MonoBehaviour
         flashlightHand.gameObject.SetActive(false);
     }
 
-    //Trigger to pickup Flashlight.
+    //Trigger to pickup Flashlight and destroy flashlight pickup object
     private void OnTriggerEnter(Collider other)
     {
         flashlight.FlashlightObjectHave = true;

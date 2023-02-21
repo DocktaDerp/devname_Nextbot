@@ -4,24 +4,28 @@ using UnityEngine;
 
 public class Flashlight : MonoBehaviour
 {
+    //Held Flashlight model
     [SerializeField] GameObject FlashlightLight;
+    //The bulb of the flashlight
     [SerializeField] GameObject FlashlightBulb;
     private bool FlashlightActive = false;
     public bool FlashlightObjectHave = false;
 
-    // Start is called before the first frame update
     void Start()
     {
+        //Setting Held model and bulb as disabled
         FlashlightLight.gameObject.SetActive(false);
         FlashlightBulb.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
+        //Calling function that allows use of flashlight
         FlashlightLightactivate();
     }
 
+    //Function that checks to see if you have the flashlight and if you have pressed "F" key to turn light on and off
     void FlashlightLightactivate()
     {
         if (Input.GetKeyDown(KeyCode.F))
